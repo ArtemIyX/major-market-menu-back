@@ -18,9 +18,13 @@ public class MenuItem implements Serializable {
     private String description;
     @Column(nullable = false)
     private boolean exists;
+    @Column(nullable = false)
+    private String code;
+
 
     public MenuItem() {
     }
+
     public MenuItem(String title, String description, boolean exists) {
         this.title = title;
         this.description = description;
@@ -55,4 +59,23 @@ public class MenuItem implements Serializable {
     public void setExists(boolean exists) {
         this.exists = exists;
     }
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", title='" + getTitle() + "'" +
+            ", description='" + getDescription() + "'" +
+            ", exists='" + isExists() + "'" +
+            ", code='" + getCode() + "'" +
+            "}";
+    }
+
 }
